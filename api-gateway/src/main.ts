@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3000;
+  const API_GATEWAY_PORT = process.env.API_GATEWAY_PORT || 3000;
   const SERVICE_A_URL = process.env.SERVICE_A_URL || 'http://localhost:3001';
   const SERVICE_B_URL = process.env.SERVICE_B_URL || 'http://localhost:3002';
   app.use(
@@ -30,9 +30,9 @@ async function bootstrap() {
       },
     }),
   );
-  await app.listen(port);
+  await app.listen(API_GATEWAY_PORT);
   Logger.log(
-    `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`,
+    `🚀 API_GATEWAY is running on: http://localhost:${API_GATEWAY_PORT}/${globalPrefix}`,
   );
 }
 bootstrap();
