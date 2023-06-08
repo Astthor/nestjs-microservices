@@ -1,0 +1,12 @@
+{
+  "name": "nestjs-microservices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-all": "cd api-gateway && npm start & cd service-a && npm start & cd service-b && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
